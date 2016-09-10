@@ -1,5 +1,5 @@
-const {source, result, transformation} = require('./data');
-const assert = require('assert');
+var {source, result, transformation} = require('./data');
+var assert = require('assert');
 
 
 var code = 'return { ';
