@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+for example in {1..3}; do
+  echo Example $example
+  node examples/$example/no_eval
+  node examples/$example/with_eval
+done

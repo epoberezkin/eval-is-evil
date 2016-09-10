@@ -1,4 +1,4 @@
-var {messageTemplate, users, messages} = require('./data');
+var {messageTemplate, recipients, messages} = require('./data');
 var assert = require('assert');
 
 
@@ -9,8 +9,8 @@ code += messageTemplate.replace(/{{([a-z_]+)}}/ig,
   }
 );
 code += '";'
-var userMessage = new Function('data', code);
+var createMessage = new Function('data', code);
 
 
-assert.deepStrictEqual(users.map(userMessage), messages);
+assert.deepStrictEqual(recipients.map(createMessage), messages);
 console.log('OK!');
